@@ -19,12 +19,7 @@ https://quarto.org/docs/guide/
 
 https://quarto.org/docs/get-started/
 
-![get_started](retribucion_social/guide1.PNG)
-
-
-
-
-
+![get_started](guide1.PNG)
 
 # Tutoriales de instalación y uso.
 
