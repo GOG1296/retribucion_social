@@ -19,7 +19,7 @@ https://quarto.org/docs/guide/
 
 https://quarto.org/docs/get-started/
 
-![get_started](images/guide1.PNG)
+![get_started](https://github.com/GOG1296/retribucion_social/blob/images/guide1.PNG)
 
 # Tutoriales de instalación y uso.
 
