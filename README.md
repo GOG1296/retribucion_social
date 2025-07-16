@@ -19,6 +19,8 @@ https://quarto.org/docs/get-started/
 
 **Se recomienda leer y seguir la url anterior porque permite instalar Quarto dependiendo del sistema operativo que utilicemos (Linux, Windows, MacOS) con la herramienta de trabajo preferida (VS Code, Jupyter, RStudio, Neovim o Text Editor).**
 
+
+
 # Tutoriales de instalación y uso.
 
 ## Instalación de Quarto con Windows
