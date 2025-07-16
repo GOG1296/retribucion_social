@@ -21,13 +21,17 @@ https://quarto.org/docs/get-started/
 
 # Tutoriales de instalación y uso.
 
-## Instalación
+## Instalación de Quarto con Windows
 
 https://www.youtube.com/watch?v=uHaDmPtO-YQ
 
-### Instalación de Quarto con Linux
+## Instalación de Quarto con Linux
 
 https://www.youtube.com/watch?v=-wgBm1aLmNY
+
+## Instalación de Quarto con Mac OS
+
+https://www.youtube.com/watch?v=aOGGPcWZKUs&pp=ygUMUXVhcnRvIE1hY09T
 
 ## Ejemplo de creación de tesis con Quarto
 
