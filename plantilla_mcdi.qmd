@@ -1,0 +1,368 @@
+---
+title: Título del Manuscrito en Cuestión
+author: Nombre del Alumno(a) sustentante
+date: 2025/07/15
+date-format: MMMM, YYYY
+execute:
+  echo: true
+  warning: false
+  message: false
+format:
+  pdf:
+    df-print: default
+    tbl-colwidths: auto
+    code-overflow: wrap
+    documentclass: scrreprt
+    toc: true
+    toc-title: Indice General
+    lof: true
+    lot: true
+    tbl-cap-location: bottom
+    number-sections: false
+    colorlinks: true
+    papersize: letter
+    lang: es
+    keep-tex: true
+    cite-method: citeproc
+    bibliography: refs.bib
+    csl: apa.csl
+    fontsize: 12pt
+    geometry:
+      - top=30mm
+      - left=20mm
+      - right=20mm
+      - heightrounded
+header-includes: |
+  \setcounter{secnumdepth}{0} % Oculta números de capítulos y secciones
+  \usepackage{graphicx}
+  \usepackage{titling}
+  \usepackage{etoolbox}
+  \usepackage{chngcntr}
+
+  \usepackage{etoolbox}
+  \makeatletter
+  \renewcommand{\@makechapterhead}[1]{%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 20\p@
+  }}
+  \renewcommand{\@makeschapterhead}[1]{%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 20\p@
+  }}
+  \renewcommand{\thechapter}{}
+  \makeatother
+
+
+  % Quitar numeración de capítulo en figuras y tablas
+  \counterwithout{figure}{chapter}
+  \counterwithout{table}{chapter}
+
+  % Evitar que footnotes se reseteen por sección
+  \pretocmd{\chapter}{\counterwithout{footnote}{chapter}}{}{}
+  \pretocmd{\section}{\counterwithout{footnote}{section}}{}{}
+  \pretocmd{\subsection}{\counterwithout{footnote}{subsection}}{}{}
+  \counterwithout{footnote}{section}
+
+  % Redefinir el título para portada
+  \renewcommand{\maketitle}{
+    \begin{titlepage}
+      \begin{center}
+        \begin{minipage}{0.4\linewidth}
+          \centering
+          \includegraphics[width=7cm]{mcdi.png}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.4\linewidth}
+          \centering
+          \includegraphics[width=7cm]{posgrados.png}
+        \end{minipage}
+
+        \vspace{2cm}
+        {\huge INFOTEC Centro de Investigación e Innovación en Tecnologías de la Información y Comunicación \par}
+
+        \vspace{1cm}
+        {\huge Maestría en Ciencia de Datos e Información \par}
+        \vspace{1cm}
+
+        {\huge \thetitle \par}
+        \vspace{1cm}
+
+        {\Large \theauthor \par}
+        \vspace{1cm}
+
+        {\large Director(a): Dr(a). Nombre del/la director(a) \par}
+        {\large Co-director(a): Dr(a). Nombre del/la director(a) \par}
+        \vspace{1cm}
+
+        {\large Modalidad de titulación: Proyecto Técnico \par}
+        {\large Aguascalientes/Ciudad de México, México \par}
+        \vspace{0.5cm}
+        {\large \thedate \par}
+        \vfill
+      \end{center}
+    \end{titlepage}
+  }
+jupyter: python3
+---
+
+# Glosario
+
+BERT (Bidirectional Encoder Representations from Transformers): Modelo de lenguaje desarrollado por Google que utiliza la arquitectura Transformer para procesar texto de manera bidireccional. Es preentrenado en tareas de completado de máscaras y predicción de próxima oración, y sirve como base para múltiples aplicaciones de PLN mediante fine-tuning.
+
+BETO: Variante del modelo BERT preentrenada específicamente en corpus en español. Desarrollado para mejorar el rendimiento en tareas de PLN en este idioma, como clasificación, NER y análisis de sentimientos.
+
+BiLSTM (Bidirectional Long Short-Term Memory): Variante de las redes LSTM que procesa secuencias de datos en ambas direcciones (hacia adelante y hacia atrás), lo que permite capturar mejor el contexto completo de una oración o texto.
+
+CNN (Convolutional Neural Network / Red Neuronal Convolucional): Tipo de red neuronal profunda especializada en el procesamiento de datos con estructura de tipo rejilla, como imágenes. Aunque fue diseñada inicialmente para visión por computadora, también se aplica en tareas de procesamiento de lenguaje natural.
+
+DataHub: Plataforma abierta para la publicación, descubrimiento y uso de conjuntos de datos, frecuentemente utilizada en proyectos de análisis y visualización de datos.
+
+DBMS (Database Management System / Sistema Gestor de Bases de Datos): Software que permite la creación, administración y consulta de bases de datos, facilitando el almacenamiento y recuperación eficiente de información estructurada.
+
+DistilBERT: Versión ligera de BERT que reduce el tamaño del modelo casi a la mitad sin perder demasiada precisión. Es más eficiente computacionalmente, ideal para aplicaciones donde se requiere velocidad o menos consumo de recursos.
+
+GPT (Generative Pre-trained Transformer): Familia de modelos de lenguaje desarrollados por OpenAI que utilizan entrenamiento autoregresivo. A diferencia de BERT, están optimizados para generación de texto, predicción de próxima palabra y tareas conversacionales mediante in-context learning.
+
+Hugging Face: Comunidad y repositorio de modelos de inteligencia artificial, reconocida por su biblioteca Transformers, ampliamente utilizada en tareas de procesamiento de lenguaje natural como clasificación, traducción o generación de texto.
+
+Kaggle: Plataforma en línea propiedad de Google, especializada en ciencia de datos y aprendizaje automático. Permite acceder a conjuntos de datos, participar en competencias, compartir notebooks y colaborar en proyectos de análisis de datos.
+
+LSTM (Long Short-Term Memory): Tipo de red neuronal recurrente capaz de aprender dependencias a largo plazo en secuencias de datos, ampliamente utilizada en tareas de procesamiento de lenguaje natural.
+
+NER (Named Entity Recognition / Reconocimiento de Entidades Nombradas): Técnica del procesamiento de lenguaje natural que identifica y clasifica automáticamente entidades específicas dentro de un texto, como nombres de productos, empresas, personas u organizaciones.
+
+OpenML: Plataforma colaborativa para compartir conjuntos de datos, flujos de trabajo y resultados de modelos de aprendizaje automático, diseñada para fomentar la transparencia y la reproducibilidad en la investigación.
+
+Papers with Code: Sitio web que vincula artículos científicos con su código fuente, métricas y resultados, facilitando la comparación de modelos y la reproducción de investigaciones en inteligencia artificial y aprendizaje automático.
+
+PDF (Portable Document Format): Formato de archivo desarrollado por Adobe que permite representar documentos de forma independiente del software, hardware o sistema operativo utilizado para crearlos.
+
+PLN (Procesamiento de Lenguaje Natural): Rama de la inteligencia artificial enfocada en la interacción entre computadoras y el lenguaje humano, mediante técnicas que permiten analizar, interpretar y generar texto de manera automatizada.
+
+RoBERTa (Robustly Optimized BERT Approach): Versión optimizada de BERT entrenada con más datos, sin la tarea de predicción de próxima oración, y con ajustes en la estrategia de entrenamiento. Mejora el rendimiento en muchas tareas estándar de PLN.
+
+spaCy: Biblioteca de procesamiento de lenguaje natural (PLN) de código abierto escrita en Python, diseñada para ser rápida, eficiente y fácil de usar, especialmente en aplicaciones de producción.
+
+# Agradecimientos
+
+Sección de contenido libre. Se deja a discreción del autor del contenido.
+
+# Resumen
+
+Este documento representa una guía para las y los estudiantes de la MCDI cuya modalidad de titulación sea Proyecto Técnico. En este sentido, a continuación se mencionarán los lineamientos indispensables para la aprobación de dicho trabajo. Es importante destacar que los requerimientos podrían variar dependiendo del contenido, como por ejemplo una sección de apéndices; por lo que este documento no limita los requerimientos adicionales que deban añadirse. 
+Para fines prácticos, el contenido de este documento deberá estar entre 15,000 y 30,000 palabras sin contar las referencias. Se sugiere que el manuscrito en cuestión tenga los capítulos: Objetivos, Introducción, Revisión de literatura, Propuesta, Análisis de resultados, Conclusiones, y Referencias. Los títulos en cuestión deben ajustarse a conveniencia. En todo momento se pide seguir los lineamientos académicos y del departamento de Biblioteca. Para resolver cualquier duda sobre esta guía, póngase en contacto con la coordinación de la maestría o con Biblioteca al correo **biblioteca@infotec.mx**.
+
+# Objetivos
+
+## Objetivo General
+
+El objetivo general del proyecto debe sintetizarse en una frase que comunique de forma
+clara lo que se va a hacer. Otra forma, es basarse en el título del trabajo para poder definirlo.
+Por ejemplo:
+Predecir la probabilidad de fallo en paneles solares fotovoltaicos mediante el análisis
+digital de imágenes.
+
+Posterior a un párrafo de contexto, se presenta un listado con los objetivos específicos.
+Por ejemplo:
+
+- Formar la base de datos de imágenes.
+
+- Proponer una arquitectura de red neuronal.
+
+- Evaluar el desempeño del modelo con respecto a otros trabajos.
+
+RecuerdRecuerda que la suma de los objetivos particulares debe conducir al cumplimiento del objetivo general. Todos los objetivos deben redactarse utilizando un verbo en infinitivo.[^verbos].
+
+[^verbos]: La sección Pie de página explica como realizar los pies de página.
+
+# Capítulo 1 {unnumbered=true}
+## Introducción
+
+Este documento tiene como objetivo servir de guía práctica para quienes deseen utilizar Quarto [^quarto] en conjunto con los notebooks de Jupyter como una herramienta eficaz para la elaboración de documentos técnicos y científicos de alta calidad. A través de esta combinación, es posible integrar de forma armoniosa texto narrativo, código ejecutable, visualizaciones y resultados computacionales en un solo archivo reproducible y profesional.
+
+
+
+Ya sea que se trate de un proyecto académico, una tesis, un artículo científico o cualquier otro tipo de informe técnico, el uso conjunto de Jupyter y Quarto permite a los autores mantener una narrativa clara, documentar su análisis de manera transparente y facilitar la colaboración y la reproducibilidad de su trabajo. Este enfoque también promueve buenas prácticas en ciencia de datos y programación científica, al tiempo que ofrece herramientas modernas para la presentación de resultados.
+
+A lo largo del documento se presentarán los conceptos básicos, ejemplos prácticos y recomendaciones para comenzar a trabajar con esta poderosa combinación de tecnologías.
+
+[^quarto]: https://quarto.org/docs/guide/
+
+## Jerarquías de titulos
+
+En los notebooks de Jupyter, los títulos y subtítulos se definen utilizando el símbolo de almohadilla (#), también conocido como gato o numeral. Al comenzar una celda de tipo Markdown con uno o más de estos símbolos, se establece la jerarquía del encabezado, de manera similar a los títulos en un documento estructurado.
+
+La cantidad de almohadillas determina el nivel del encabezado, siguiendo la siguiente convención:
+
+    # Título de nivel 1 – Encabezado principal
+
+    ## Título de nivel 2 – Subtítulo
+
+    ### Título de nivel 3 – Subtítulo de segundo orden
+
+    #### Título de nivel 4 – Subtítulo de tercer orden
+
+Y así sucesivamente, hasta un máximo de seis niveles (######).
+
+Este sistema permite organizar el contenido de manera clara y jerárquica, facilitando la navegación, la lectura y, en el caso de Quarto, la generación automática de tablas de contenido.
+
+
+## Imagenes
+
+El proceso de insertar imágenes en un archivo Jupyter Notebook o Quarto (.qmd) es sencillo. Se debe utilizar el signo de admiración !, seguido de corchetes [], donde se escribe el texto alternativo o identificador de la imagen, y finalmente paréntesis (), donde se indica la ruta o dirección del archivo de imagen.
+
+Por ejemplo:
+
+`![Texto alternativo](ruta/de/imagen.png)`
+
+En este caso la imagen esta en la misma dirección que el archivo Jupyter Notebook o Quarto (.qmd).
+
+![Imagen de AI](ai_image.jpg){#fig-ai fig-align="center"}
+
+Esto resulta especialmente útil en documentos científicos o técnicos, donde las imágenes deben estar debidamente etiquetadas y referenciadas.
+
+# Capítulo 2 
+## Estado del arte 
+
+Retomando el caso de estudio hipotético mencionado en los objetivos, en este capítulo se debería hacer una recopilación de los trabajos recientes más relevantes del campo. En general, nuestro estado del arte debe destacar la necesidad que existe de un trabajo como el que vamos a desarrollar.
+
+De modo que si nuestro objetivo es predecir la probabilidad de fallo que pueden presentar los paneles solares fotovoltaicos, el estado del arte debe recopilar trabajos que aborden el tema a partir de las características conjunto de datos empleados; las técnicas de tratamiento a las que se deben someter las imágenes; los modelos que logran hacer una predicción más precisa; y eventualmente los trabajos más similares al presente caso de estudio.
+
+
+## Pie de página
+
+Para insertar una nota al pie en Quarto, se utiliza la siguiente sintaxis:
+escribe el contenido entre corchetes cuadrados ([]), precedido por un símbolo de potencia (^) y un identificador único. Por ejemplo:
+
+... este es un ejemplo[^nota1]. Se recomienda elegir nombres únicos para cada pie de página. Usar una numeración podría ser más complicado al existir el riesgo de repetir un número.
+
+[^nota1]: Se pueden usar números, palabras o ambos.
+
+## Referencias bibliográficas.
+
+La forma correcta de realizar una cita en Quarto es escribiendo una arroba (`@`) seguida del identificador asignado a la referencia en el archivo `.bib`.
+
+En este caso, el identificador de la fuente es `vaswani2017`.
+
+![Ejemplo de referencia](cita_apa.png){#fig-cita fig-align="center" width=60%}
+
+Por ejemplo:
+
+La cita se escribe directamente como ``@vaswani2017`` y se genera una cita integrada en el texto: @vaswani2017.
+
+**Las referencias utilizadas a lo largo del documento se agregan automáticamente en el apartado de Referencias, en orden alfabético.**
+
+## Ejemplo de tablas
+
+En Quarto, las tablas pueden definirse directamente en Markdown utilizando una sintaxis basada en tuberías (|) y guiones (-). Esta es una forma sencilla y legible de presentar datos tabulares dentro de un notebook o documento.
+
+Por ejemplo, la siguiente tabla muestra una secuencia de tokens junto con sus respectivas etiquetas gramaticales:
+
+| **Token**     | **Etiqueta** |
+|---------------|--------------|
+| El            | ART          |  
+| perro         | SUS          |
+| corre         | V            |
+
+: Ejemplo de tabla.
+
+Las tablas más comunes en Quarto se definen usando barras verticales (|) y guiones (-), con opción de alineación por columna mediante dos puntos (:):
+
+| Izquierda | Derecha | Centro  |
+|:----------|--------:|:-------:|
+| A         |       B |    C    |
+
+: Alineación de tablas.
+
+También es posible agregar títulos y clases de estilo:
+
+| Fruta  | Precio |
+|--------|--------|
+| Manzana | 2.05  |
+| Pera    | 1.37  |
+
+: Precios de frutas {.striped .hover}
+
+Clases Bootstrap como .striped, .hover, .bordered, etc., se pueden aplicar para cambiar el estilo visual de la tabla.
+
+
+## Ajuste de Ancho de Columnas
+
+Puedes modificar el ancho relativo de las columnas:
+
+| Fruta  | Precio |
+|--------|--------|
+| Manzana | 2.05  |
+| Pera    | 1.37  |
+
+: {tbl-colwidths="[75,25]"}
+
+También puedes establecer anchos a nivel documento con tbl-colwidths en los metadatos YAML.
+
+# Capítulo 3 
+## Propuesta
+
+Una vez mencionadas las potenciales áreas de contribución al campo, se destacan los diferenciadores de la presente investigación con respecto a los mencionados en la sección. Es importante hacer hincapié que este capítulo tiene que tener tanto detalle como sea posible tanto en el método como en los datos empleados...
+
+# Capítulo 4 
+## Análisis Experimental
+
+## Referencias Cruzadas
+
+Para hacer referencia a tablas, agrega un identificador con el prefijo #tbl-:
+
+| A | B | C |
+|---|---|---|
+| 1 | 2 | 3 |
+
+: Tabla de ejemplo {#tbl-ejemplo}
+
+Ver @tbl-ejemplo.
+
+También puedes generar tablas desde código y referenciarlas usando label::
+
+```{python}
+#| label: tbl-planets
+#| tbl-cap: Astronomical object
+
+from tabulate import tabulate
+from IPython.display import Markdown
+
+table = [["Sol", "696,000", 1.989e30],
+         ["Tierra", "6,371", 5.972e24]]
+
+Markdown(tabulate(table, headers=["Objeto", "Radio (km)", "Masa (kg)"]))
+```
+
+Puedes consultar la documentación completa sobre tablas en Quarto[^quarto-tablas].
+
+[^quarto-tablas]: https://quarto.org/docs/authoring/tables.html
+
+
+
+# Capítulo 5
+## Conclusiones
+
+En este capítulo tiene que darse un cierre de todo lo desarrollado en el proyecto, destacando los resultados más importantes a partir de la metodología descrita a lo largo del documento. Lo anterior, permite posicionar el proyecto con respecto a los trabajos mencionados en el estado del arte del capítulo.
+
+Es fundamental hacer hincapié en qué tanto abarcó el proyecto y las condiciones bajo las cuales los resultados obtenidos se presentan. Dicho de otro modo, los alcances del proyecto, que a su vez deben ir acorde al cumplimiento de los objetivos mencionados en los objetivos.
+
+Otro punto importante que desarrollar, es hacer mención de las potenciales áreas de mejora que llevarían a la obtención de resultados más prometedores o aquellos aspectos que por alguna razón no pudieron ser cubiertos a lo largo del desarrollo del proyecto, es decir, el trabajo a futuro.
+
+\newpage
+
+# Referencias
+
+::: {#refs}
+:::
+
+\newpage
+
+# Apéndice A
+## Fichas técnicas
+
