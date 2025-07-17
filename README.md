@@ -1,55 +1,61 @@
-# Retribución Social.
-Guía de instalación y uso de Quarto con Jupyter Notebooks.
+# Guía de instalación y uso de Quarto.
 
-# Página oficial de Quarto
+## Recursos oficiales de Quarto
 
-https://quarto.org/
+- Página principal: https://quarto.org/
+- Descarga de Quarto: https://quarto.org/docs/download/index.html
+- Documentación completa: https://quarto.org/docs/guide/
+- Guía para comenzar: https://quarto.org/docs/get-started/
 
-# URL de descarga de Quarto desde página oficial.
+## Guía oficial de instalación.
 
-https://quarto.org/docs/download/index.html
+**Se recomienda encarecidamente consultar la guía para comenzar (https://quarto.org/docs/get-started/), ya que ofrece instrucciones completas y actualizadas para:**
 
-# Documentación oficial de Quarto.
+- Instalar Quarto según el sistema operativo utilizado (Linux, Windows o macOS).
 
-https://quarto.org/docs/guide/
+- Elegir y configurar la herramienta de trabajo preferida (VS Code, Jupyter, RStudio, Neovim o cualquier editor de texto).
 
-# Guía oficial de instalación.
-
-**Se recomienda leer y seguir la siguiente url porque permite instalar Quarto dependiendo del sistema operativo que utilicemos (Linux, Windows, MacOS) con la herramienta de trabajo preferida (VS Code, Jupyter, RStudio, Neovim o Text Editor).**
-
-https://quarto.org/docs/get-started/
+- Aprender a renderizar documentos a distintos formatos, directamente desde la herramienta seleccionada, con ejemplos específicos para cada entorno.
 
 ![get_started](https://github.com/GOG1296/retribucion_social/blob/images/guide1.PNG)
 
-- En el paso 1 (Step 1) se elige la versión de quarto correspondiente al sistema operativo.
+### ¿Cómo funciona la guía?
 
-- En el paso 2 (Step 2) se elige con que herramienta se desea usar Quarto y nos dirige a la guía de instalación correspondiente.
+- Paso 1 (Step 1): Selecciona la versión de Quarto correspondiente a tu sistema operativo.
 
-# Tutoriales de instalación y uso.
+- Paso 2 (Step 2): Elige la herramienta con la que deseas trabajar. Serás redirigido a una guía específica que explica cómo:
 
-## Instalación de Quarto con Windows
+  - Instalar y configurar esa herramienta.
+
+  - Integrar Quarto correctamente.
+
+  - Renderizar tus documentos desde esa plataforma.
+
+## Tutoriales de instalación y uso.
+
+### Instalación de Quarto con Windows
 
 https://www.youtube.com/watch?v=uHaDmPtO-YQ
 
-## Instalación de Quarto con Linux
+### Instalación de Quarto con Linux
 
 https://www.youtube.com/watch?v=-wgBm1aLmNY
 
-## Instalación de Quarto con Mac OS
+### Instalación de Quarto con Mac OS
 
 https://www.youtube.com/watch?v=aOGGPcWZKUs&pp=ygUMUXVhcnRvIE1hY09T
 
-## Ejemplo de creación de tesis con Quarto
+### Ejemplo de creación de tesis con Quarto
 
 https://www.youtube.com/watch?v=T9D-lq-hP1o&list=PLvxMQVVqTtnX9wk0vPISS05CRd89RPk3H
 
-# Archivos escenciales para ejecutar Quarto con el estilo predefinido de INFOTEC.
+## Archivos esenciales para utilizar el estilo INFOTEC en Quarto
 
 - mcdi.png: Logo de la maestría en ciencia de datos e información.
 - posgrados.png: Logo de Posgrados INFOTEC.
 - apa.csl: Plantilla que define cómo deben formatearse las citas y bibliografías según el estilo APA
 
-# Archivo refs.bib
+## Archivo refs.bib
 
 Para abrir este archivo, es suficiente con utilizar un editor de texto plano, como:
 
@@ -69,11 +75,11 @@ Este archivo contiene todas las referencias bibliográficas que se utilizarán e
 
 Es en este archivo donde debemos colocar todas las citas de interés que deseamos incluir en el documento final.
 
-Algunas páginas web donde se pueden encontrar referencias en formato .bib son:
+Algunas fuentes donde puedes obtener referencias en formato .bib son:
 - https://scholar.google.com
 - https://arxiv.org
   
-## Obteneción de referencias usando google scholar
+### Obteneción de referencias usando google scholar
 
 Lo primero es ir a la dirección https://scholar.google.com/ y buscar la referencia de nuestro interés. En este caso, buscaremos "Attention is all you need" de Vaswani.
 
@@ -95,7 +101,7 @@ Al hacer clic en BibTeX, se abrirá una nueva página con el siguiente formato, 
   year={2017}
 }
 
-## Obteneción de referencias usando arxiv.org
+### Obteneción de referencias usando arxiv.org
 
 Primero nos dirigimos a la dirección https://arxiv.org/ y procedemos a buscar la referencia de nuestro interés. La barra de busqueda se encuentra en la parte superior derecha.
 
@@ -114,5 +120,8 @@ Y nos dara una nueva ventana con el formato bib.
 ![arxiv4](https://github.com/gog14/retribucion_social/blob/images/arxiv4.PNG)
 
 Finalmente copiamos el formato tal como está y lo pegamos en nuestro archivo refs.bib
+
+
+
 
 
